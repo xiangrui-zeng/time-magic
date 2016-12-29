@@ -9,9 +9,27 @@ app.engine("html", require("ejs").__express);
 
 app.use(express.static('public'));
 
-app.get('/calendar_view', function(req, res) {
-  res.render('calendar', {
-    title: 'Calendar'
+app.get('/', function(req, res) {
+  res.render('home', {
+    title: 'Time Magic'
+  });
+});
+
+app.get('/home', function(req, res) {
+  res.render('home', {
+    title: 'Time Magic'
+  });
+});
+
+app.get('/About', function(req, res) {
+  res.render('about', {
+    title: 'Time Magic'
+  });
+});
+
+app.get('/contact', function(req, res) {
+  res.render('contact', {
+    title: 'Time Magic'
   });
 });
  
