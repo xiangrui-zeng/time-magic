@@ -1,4 +1,6 @@
 var express = require('express');
+var routes = require('./routes');
+var bodyParser = require('body-parser');
  
 var app = express();
  
@@ -9,29 +11,13 @@ app.engine("html", require("ejs").__express);
 
 app.use(express.static('public'));
 
-app.get('/', function(req, res) {
-  res.render('home', {
-    title: 'Time Magic'
-  });
-});
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/home', function(req, res) {
-  res.render('home', {
-    title: 'Time Magic'
-  });
-});
+// parse application/json
+app.use(bodyParser.json());
 
-app.get('/About', function(req, res) {
-  res.render('about', {
-    title: 'Time Magic'
-  });
-});
-
-app.get('/contact', function(req, res) {
-  res.render('contact', {
-    title: 'Time Magic'
-  });
-});
+routes(app);
  
 app.listen(3000);
 
