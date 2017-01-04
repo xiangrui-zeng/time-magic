@@ -33,6 +33,7 @@
     <script src='vendor/moment.min.js'></script>
     <script src='vendor/jquery/jquery.min.js'></script>
     <script src='js/fullcalendar/fullcalendar.min.js'></script>
+    <script src='js/time-magic.js'></script>
 
     <link rel='stylesheet' href='css/fullcalendar/fullcalendar.min.css' />
     <link rel='stylesheet' href='css/fullcalendar/fullcalendar.print.min.css' media='print'/>
@@ -44,8 +45,19 @@
             $('#calendar').fullCalendar({
                  dayClick: function(date, jsEvent, view) {
 
-                    // change the day's background color just for fun
                     // $('#calendar').fullCalendar('changeView', 'agendaDay');
+
+//                     alert('Clicked on: ' + date.format());
+//
+//                     alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+//
+//                     alert('Current view: ' + view.name);
+
+                     var orgColor = $(this).css('background-color').match(/\d+/g);
+
+                     // change the day's background color just for selected
+                     var color = rgbToHex(orgColor[0],orgColor[1],orgColor[2]) === '#0085a1' ? '#ffffff' : '#0085a1';
+                     $(this).css('background-color', color);
 
                 },
                 defaultDate: '2016-12-12',
