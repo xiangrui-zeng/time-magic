@@ -30,6 +30,26 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src='vendor/jquery/jquery.min.js'></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#addNewUser").click(function(){
+                $("#answerForm").append('<tr> ' +
+                    '<td>No.</td> ' +
+                    '<td><input type="text" name="username" /></td> ' +
+                    '<td><i class="glyphicon glyphicon-question-sign"></i>&nbsp<i class="glyphicon glyphicon-ok"></i>&nbsp<i class="glyphicon glyphicon-remove"></i></td>' +
+                    '<td><i class="glyphicon glyphicon-question-sign"></i>&nbsp<i class="glyphicon glyphicon-ok"></i>&nbsp<i class="glyphicon glyphicon-remove"></i></td> ' +
+                    '<td><i class="glyphicon glyphicon-question-sign"></i>&nbsp<i class="glyphicon glyphicon-ok"></i>&nbsp<i class="glyphicon glyphicon-remove"></i></td>' +
+                    ' <td style="white-space: nowrap"> <a href="/save"><i class="glyphicon glyphicon-floppy-save"></i></a> <a href="#myModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i></a> </td>' +
+                    ' </tr>');
+            });
+            $("#customFields").on('click','.remCF',function(){
+                $(this).parent().parent().remove();
+            });
+        });
+    </script>
+
 </head>
 
     <!-- Navigation -->
@@ -85,7 +105,7 @@
                     <th style="width: 36px;"></th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="answerForm">
                 <tr>
                     <td>1</td>
                     <td>Tompson</td>
@@ -156,7 +176,7 @@
             </table>
         </div>
         <div class="btn-toolbar">
-            <button class="btn new-user-btn">New User</button>
+            <button id="addNewUser" class="btn new-user-btn">New User</button>
             <button class="btn export-btn">Export</button>
         </div>
 
