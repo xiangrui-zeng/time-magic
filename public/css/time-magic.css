@@ -65,27 +65,27 @@
   
 /* Generic Button Styles */
 
-  .button{
-    padding:8px 12px;
-    background:#0A5175;
-    display: block;
-    width:120px;
-    margin:10px 0 0px 0;
-    border-radius:3px;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-    text-align:center;
-    font-size:0.8em;
-    box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-    -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-    -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
-  }
+  /*.button{*/
+    /*padding:8px 12px;*/
+    /*background:#0A5175;*/
+    /*display: block;*/
+    /*width:120px;*/
+    /*margin:10px 0 0px 0;*/
+    /*border-radius:3px;*/
+    /*-webkit-transition: all 0.3s;*/
+    /*-moz-transition: all 0.3s;*/
+    /*transition: all 0.3s;*/
+    /*text-align:center;*/
+    /*font-size:0.8em;*/
+    /*box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);*/
+    /*-moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);*/
+    /*-webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);*/
+  /*}*/
 
-  .button:hover{
-    background:#8BC3A3;
-    color:white;
-  }
+  /*.button:hover{*/
+    /*background:#8BC3A3;*/
+    /*color:white;*/
+  /*}*/
 
 /* Send Button Styles */
 
@@ -124,3 +124,87 @@ input {
     position: relative;
     z-index: 9999;
 }
+
+ #custom-search-input{
+   padding: 3px;
+   border: solid 1px #E4E4E4;
+   border-radius: 6px;
+   background-color: #fff;
+ }
+
+ #custom-search-input input{
+   border: 0;
+   box-shadow: none;
+ }
+
+ #custom-search-input button{
+   margin: 2px 0 0 0;
+   background: none;
+   box-shadow: none;
+   border: 0;
+   color: #666666;
+   padding: 0 8px 0 10px;
+   border-left: solid 1px #ccc;
+ }
+
+ #custom-search-input button:hover{
+   border: 0;
+   box-shadow: none;
+   border-left: solid 1px #ccc;
+ }
+
+ #custom-search-input .glyphicon-search{
+   font-size: 23px;
+ }
+
+ .new-user-btn{
+   color:#fff;
+   background:#8BC3A3;
+   border:none;
+   border-radius:3px;
+   outline: none;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   transition: all 0.3s;
+   margin:auto;
+   box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+   -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+   -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+ }
+
+ .new-user-btn:hover{
+   background:#111;
+   color: white;
+   border:none;
+ }
+
+ .new-user-btn:active{
+   opacity: 0.9;
+ }
+
+ .export-btn{
+   color:#fff;
+   background: #b2b6c3;
+   border:none;
+   border-radius:3px;
+   outline: none;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   transition: all 0.3s;
+   margin:auto;
+   box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+   -moz-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+   -webkit-box-shadow: 0px 1px 4px rgba(0,0,0, 0.10);
+ }
+
+ .export-btn:hover{
+   background:#111;
+   color: white;
+   border:none;
+ }
+
+ .export-btn:active{
+   opacity: 0.9;
+ }
+
+

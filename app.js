@@ -21,6 +21,6 @@ routes(app);
  
 app.listen(3000);
 
-console.log("Sognare listening on port %d ", 3000);
+console.log("Time Magic listening on port %d ", 3000);
 
 module.exports = app;

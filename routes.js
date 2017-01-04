@@ -44,6 +44,12 @@ function web(app) {
         });
     });
 
+    app.get('/search', function(req, res) {
+        res.render('search', {
+            title: 'Time Magic'
+        });
+    });
+
     app.get('/About', function(req, res) {
         res.render('about', {
             title: 'Time Magic'
