@@ -33,20 +33,53 @@
     <script src='vendor/jquery/jquery.min.js'></script>
 
     <script>
+        var prepareDel = "";
+        var html = "<table style='border-collapse: separate;border-spacing: 5px 0px;'> " +
+            "<tr> " +
+            "<td class='select-td'>" +
+            "<i class='glyphicon glyphicon-question-sign'></i>" +
+            "</td>" +
+            "<td class='select-td'>" +
+            "<i class='glyphicon glyphicon-ok'></i>" +
+            "</td>" +
+            "<td class='select-td'>" +
+            "<i class='glyphicon glyphicon-remove'></i>" +
+            "</td>" +
+            " </tr>" +
+            "</table>"
         $(document).ready(function(){
             $("#addNewUser").click(function(){
                 $("#answerForm").append('<tr> ' +
                     '<td>No.</td> ' +
                     '<td><input type="text" name="username" /></td> ' +
-                    '<td><i class="glyphicon glyphicon-question-sign"></i>&nbsp<i class="glyphicon glyphicon-ok"></i>&nbsp<i class="glyphicon glyphicon-remove"></i></td>' +
-                    '<td><i class="glyphicon glyphicon-question-sign"></i>&nbsp<i class="glyphicon glyphicon-ok"></i>&nbsp<i class="glyphicon glyphicon-remove"></i></td> ' +
-                    '<td><i class="glyphicon glyphicon-question-sign"></i>&nbsp<i class="glyphicon glyphicon-ok"></i>&nbsp<i class="glyphicon glyphicon-remove"></i></td>' +
+                    '<td>' + html + '</td>' +
+                    '<td>' + html + '</td>' +
+                    '<td>' + html + '</td>' +
                     ' <td style="white-space: nowrap"> <a href="/save"><i class="glyphicon glyphicon-floppy-save"></i></a> <a href="#myModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i></a> </td>' +
                     ' </tr>');
             });
-            $("#customFields").on('click','.remCF',function(){
-                $(this).parent().parent().remove();
+            $("#answerForm").on('click', '.glyphicon-trash',function(){
+                prepareDel = $(this).parent().parent().parent();
             });
+
+            //TODO: save data to webpage and db
+            $("#answerForm").on('click', '.glyphicon-floppy-save',function(){
+
+            });
+
+            //TODO: edit data from weboage
+            $("#answerForm").on('click', '.glyphicon-pencil',function(){
+
+            });
+
+            $("#confirmDeleteUser").click(function () {
+                //TODO: delete info from db
+                prepareDel.remove();
+                $('#myModal').modal('hide')
+            });
+//            $("#cancelDeleteUser").click(function () {
+//                $('#myModal').modal('hide')
+//            })
         });
     </script>
 
@@ -64,7 +97,7 @@
                     <div class="site-heading">
                         <h1>Search Your Info</h1>
                         <hr class="small">
-                        <span class="subheading">You can get you schedule information by id.</span>
+                        <span class="subheading">You can get you schedule information by EventId.</span>
                     </div>
                 </div>
             </div>
@@ -192,8 +225,8 @@
                     <p class="error-text">Are you sure you want to delete the user?</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn export-btn">Close</button>
-                    <button class="btn new-user-btn">Delete</button>
+                    <button class="btn export-btn" data-dismiss="modal">Close</button>
+                    <button id="confirmDeleteUser" class="btn new-user-btn">Delete</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
