@@ -39,6 +39,7 @@
     <link rel='stylesheet' href='css/fullcalendar/fullcalendar.print.min.css' media='print'/>
 
     <script>
+        var selectedSchedule = [];
 
         $(document).ready(function() {
 
@@ -57,6 +58,14 @@
 
                      // change the day's background color just for selected
                      var color = rgbToHex(orgColor[0],orgColor[1],orgColor[2]) === '#0085a1' ? '#ffffff' : '#0085a1';
+                     if (color === '#0085a1') {
+                         selectedSchedule.push(date.format());
+                     } else {
+                        var index = selectedSchedule.indexOf(date.format);
+                        selectedSchedule.splice(index,1);
+                     }
+                     selectedSchedule.sort();
+                     $('#selectedSchedule').val(selectedSchedule);
                      $(this).css('background-color', color);
 
                 },
@@ -118,6 +127,9 @@
                 <div class="contact-form">
                     <!-- Form -->
                     <form id="contact-us" method="post" action="/create_form">
+
+                        <input id="selectedSchedule" name="selectedSchedule" type="hidden" value="">
+
                         <!-- Left Inputs -->
                         <div class="col-xs-6 wow animated slideInLeft" data-wow-delay=".5s">
                             <!-- Name -->

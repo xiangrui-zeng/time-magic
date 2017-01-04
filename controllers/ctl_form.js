@@ -9,7 +9,7 @@ exports.createForm = function (req, res) {
     formData.subject = req.body.subject;
     formData.tel = req.body.tel;
     formData.message = req.body.message;
-    formData.dateRange = req.body.dateRage;
+    formData.selectedSchedule = req.body.selectedSchedule;
 
     // formData.subject = "test subject";
     // formData.tel = "911";

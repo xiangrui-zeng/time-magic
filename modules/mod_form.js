@@ -11,7 +11,7 @@ var FormSchema = new Schema({
     subject     :     {type: String},
     tel     :     {type: String},
     message   :     {type: String},
-    dateRange     :     [Date],
+    selectedSchedule     :     [String],
     createdate:     {type: Date, default: Date.now },
     updatedate:     {type: Date, default: Date.now }
 
