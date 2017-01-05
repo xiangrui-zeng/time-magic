@@ -17,7 +17,9 @@ var FormSchema = new Schema({
 
 });
 
-mongoose.connect('mongodb://localhost/time-magic');
+// mongoose.connect('mongodb://localhost/time-magic');
+//connect to mongo-lab
+mongoose.connect('mongodb://madmin:madmin@ds151228.mlab.com:51228/mongo-lab');
 
 var Form = mongoose.model('Form', FormSchema);
 
